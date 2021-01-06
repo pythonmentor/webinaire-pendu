@@ -7,14 +7,13 @@ class ApplicationController:
         self.controller = None
 
     def start(self):
-        self.controller = HomeMenuController(self)
+        self.controller = HomeMenuController()
         while self.controller:
             self.controller = self.controller()
 
 
 class HomeMenuController:
-    def __init__(self, app):
-        self.app = app
+    def __init__(self):
         self.menu = Menu()
         self.view = HomeMenuView(self.menu)
 
